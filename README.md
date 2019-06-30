@@ -6,13 +6,13 @@ Search CLI is a simple search cli tool which makes searching in the given datase
 
 ![](example-screenshot.png)
 
-# Features
+## Features
 
   - Full value search for any field of organization, user, ticket entity
   - Case insensitive search for any field of organization, user, ticket entity
   - return all relavent entities ( i.e. searching user by name should return all its relavent tickets and organizations.)
 
-# Installation
+## Installation
 
 Search CLI requires [Node.js](https://nodejs.org/) v8.12.0+ to run.
 
@@ -31,7 +31,7 @@ $ npm run create
 $ npm run unit-test
 ```  
   
-# Usage Examples
+## Usage Examples
 
  - Check the version of this search cli
   ```sh
@@ -65,7 +65,7 @@ $ search --users verified,false
 
 This text you see here is *actually* written in Markdown! To get a feel for Markdown's syntax, type some text into the left window and watch the results in the right.
 
-# Dependency
+## Dependency
 
 Search CLI uses a number of open source projects to work properly:
 
@@ -76,11 +76,11 @@ Search CLI uses a number of open source projects to work properly:
 * [Typescript](https://github.com/microsoft/TypeScript)
 * [node.js]()
 
-# Release History
+## Release History
 * 0.0.1
     * Basic search funcions implemented
 
-# Todos
+## Todos
 
  - Integration test
 
