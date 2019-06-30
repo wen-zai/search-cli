@@ -11,6 +11,7 @@ Search CLI is a simple search cli tool which makes searching in the given datase
   - Case insensitive search for any field of organization, user, ticket entity
   - Return all relavent entities ( i.e. searching user by name should return all its relavent tickets and organizations.)
   - Search empty field ( i.e. can search even where field is empty.)
+  - Display error when invalid field or value is provided
 
 ## Trade-off  
   - Extra space and time are required in order to convert array of objects into map
