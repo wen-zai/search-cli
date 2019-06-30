@@ -57,12 +57,6 @@ export interface DataStore {
   organizations: Organization[];
 }
 
-export interface DataStore {
-  users: User[];
-  tickets: Ticket[];
-  organizations: Organization[];
-}
-
 export const dataStore: DataStore = {
   users: require('../dataset/users.json'),
   tickets: require('../dataset/tickets.json'),
