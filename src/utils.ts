@@ -1,7 +1,7 @@
 import chalk from "chalk";
 
-export const isStringEqualCaseInsensitive = (str1: string, str2: string) => {
-   return str1.toLowerCase() === str2.toLowerCase();
+export const isStringEqualCaseInsensitive = (targetStr: string, str: string) => {
+   return targetStr.toLowerCase() === str.toLowerCase();
 }
 
 export const isArrayIncludeElementCaseInsensitive = (targetArray: string[], str: string) => {
