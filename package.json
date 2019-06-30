@@ -1,0 +1,48 @@
+{
+  "name": "search-cli",
+  "version": "0.0.1",
+  "description": "A simple search cli",
+  "main": "./lib/index.js",
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "test": "sudo npm i -g && search",
+    "unit-test": "jest",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+  },
+  "keywords": [
+    "cli",
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Anonymous as requested",
+  "license": "ISC",
+  "bin": {
+    "search": "./lib/index.js"
+  },
+  "dependencies": {
+    "@types/figlet": "^1.2.0",
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "commander": "^2.19.0",
+    "console.table": "^0.10.0",
+    "figlet": "^1.2.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/node": "^10.12.10",
+    "jest": "^24.8.0",
+    "nodemon": "^1.18.7",
+    "ts-node": "^7.0.1",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  },
+  "jest": {
+      "verbose": true,
+      "moduleDirectories": ["node_modules", "src"]
+  }
+  
+}
