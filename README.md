@@ -10,7 +10,7 @@ Search CLI is a simple search cli tool which makes searching in the given datase
 
   - Full value search for any field of organization, user, ticket entity
   - Case insensitive search for any field of organization, user, ticket entity
-  - return all relavent entities ( i.e. searching user by name should return all its relavent tickets and organizations.)
+  - Return all relavent entities ( i.e. searching user by name should return all its relavent tickets and organizations.)
 
 ## Installation
 
