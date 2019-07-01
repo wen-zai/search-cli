@@ -26,6 +26,7 @@ Install the dependencies and devDependencies and start the cli.
 
 ```sh
 $ cd search-cli
+$ npm install
 $ npm run create
 ```
 
@@ -33,6 +34,7 @@ For testing
 
 ```sh
 $ cd search-cli
+$ npm install
 $ npm run create
 $ npm run unit-test
 ```  
