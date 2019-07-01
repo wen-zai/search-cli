@@ -1,12 +1,11 @@
-import { DataStore, dataStore, Organization, User, Ticket, organizationsMap, SearchType, 
-    ticketsMapByOrganizationId, usersMapByOrganizationId } from './data-types';
+import {
+    DataStore, dataStore, Organization, User, Ticket, organizationsMap, SearchType,
+    ticketsMapByOrganizationId, usersMapByOrganizationId
+} from './data-types';
 import { isArray } from 'util';
 import chalk from "chalk";
 require("console.table");
 import { isStringEqualCaseInsensitive, isArrayIncludeElementCaseInsensitive, printResult } from './utils';
-
-
-
 
 export default function search(searchType: SearchType, searchField: string, searchContent: string) {
     const results = [];
@@ -27,7 +26,7 @@ export default function search(searchType: SearchType, searchField: string, sear
 
     printResult(searchType, results);
     for (const resultElement of results) {
-// tslint:disable-next-line: no-console
+        // tslint:disable-next-line: no-console
         console.log(chalk.blue.bold(`search results of relavant entities for ${searchType} with id: 
         ${resultElement._id}:`));
         searchRelavantEntities(searchType, resultElement);
@@ -38,7 +37,7 @@ export default function search(searchType: SearchType, searchField: string, sear
 
 // Get relavant Users and Tickets entities from the map created based on organization_id 
 // Get relavant organization entities from the map created based on its id 
-export function searchRelavantEntities(searchType: SearchType, 
+export function searchRelavantEntities(searchType: SearchType,
     result: Organization | User | Ticket): Partial<DataStore> {
     let organizationId;
     let organization;

@@ -64,24 +64,24 @@ export const dataStore: DataStore = {
 };
 
 function convertOrganizationToMapById(sourceArray: Organization[]) {
-   const map: Map<number, Organization> = new Map();
-   for (const arrayElement of sourceArray) {
-       map.set(arrayElement._id, arrayElement);
-   }
-   return map;
+  const map: Map<number, Organization> = new Map();
+  for (const arrayElement of sourceArray) {
+    map.set(arrayElement._id, arrayElement);
+  }
+  return map;
 }
 
 
-function convertArrayToMapByOrganizationId (sourceArray: any[]) {
+function convertArrayToMapByOrganizationId(sourceArray: any[]) {
   const map: Map<number, Ticket[] | User[]> = new Map();
   for (const arrayElement of sourceArray) {
-      const existingElement = map.get(arrayElement.organization_id);
-      if (existingElement) {
-         existingElement.push(arrayElement);
-         map.set(arrayElement.organization_id, existingElement);
-      } else {
-         map.set(arrayElement.organization_id, [arrayElement]);
-      }
+    const existingElement = map.get(arrayElement.organization_id);
+    if (existingElement) {
+      existingElement.push(arrayElement);
+      map.set(arrayElement.organization_id, existingElement);
+    } else {
+      map.set(arrayElement.organization_id, [arrayElement]);
+    }
   }
   return map;
 }
@@ -94,7 +94,7 @@ export const usersMapByOrganizationId = convertArrayToMapByOrganizationId(dataSt
 
 
 export enum SearchType {
-  Organizations= "organizations",
-  Tickets= "tickets",
-  Users= "users",
+  Organizations = "organizations",
+  Tickets = "tickets",
+  Users = "users",
 }

@@ -3,7 +3,7 @@ import chalk from "chalk";
 import program from "commander";
 import figlet from "figlet";
 import { isUndefined } from "util";
-import { dataStore, DataStore, SearchType} from "./data-types";
+import { dataStore, DataStore, SearchType } from "./data-types";
 import search from "./search";
 import { splitArguments } from "./utils";
 
