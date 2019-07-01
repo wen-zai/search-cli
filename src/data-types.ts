@@ -11,7 +11,7 @@ export interface Ticket {
   submitter_id: number;
   assignee_id: number;
   organization_id: number;
-  tags: Array<string>;
+  tags: string[];
   has_incidents: boolean;
   due_at: string;
   via: string;
@@ -34,7 +34,7 @@ export interface User {
   phone: string;
   signature: string;
   organization_id: number;
-  tags: Array<string>;
+  tags: string[];
   suspended: boolean;
   role: string;
 }
@@ -44,11 +44,11 @@ export interface Organization {
   url: string;
   external_id: string;
   name: string;
-  domain_names: Array<string>;
+  domain_names: string[];
   created_at: string;
   details: string;
   shared_tickets: boolean;
-  tags: Array<string>;
+  tags: string[];
 }
 
 export interface DataStore {
@@ -58,28 +58,28 @@ export interface DataStore {
 }
 
 export const dataStore: DataStore = {
-  users: require('../dataset/users.json'),
-  tickets: require('../dataset/tickets.json'),
-  organizations: require('../dataset/organizations.json'),
+  users: require("../dataset/users.json"),
+  tickets: require("../dataset/tickets.json"),
+  organizations: require("../dataset/organizations.json"),
 };
 
 function convertOrganizationToMapById(sourceArray: Organization[]) {
-   let map: Map<number,Organization> = new Map();
-   for (let arrayElement of sourceArray) {
-       map.set(arrayElement._id,arrayElement);
+   const map: Map<number, Organization> = new Map();
+   for (const arrayElement of sourceArray) {
+       map.set(arrayElement._id, arrayElement);
    }
    return map;
 }
 
 
 function convertArrayToMapByOrganizationId (sourceArray: any[]) {
-  let map: Map<number, Ticket[] | User[]> = new Map();
-  for (let arrayElement of sourceArray) {
-      let existingElement = map.get(arrayElement.organization_id);
-      if(existingElement){
+  const map: Map<number, Ticket[] | User[]> = new Map();
+  for (const arrayElement of sourceArray) {
+      const existingElement = map.get(arrayElement.organization_id);
+      if (existingElement) {
          existingElement.push(arrayElement);
          map.set(arrayElement.organization_id, existingElement);
-      }else{
+      } else {
          map.set(arrayElement.organization_id, [arrayElement]);
       }
   }
@@ -94,7 +94,7 @@ export const usersMapByOrganizationId = convertArrayToMapByOrganizationId(dataSt
 
 
 export enum SearchType {
-  Organizations='organizations',
-  Tickets='tickets',
-  Users='users',
+  Organizations= "organizations",
+  Tickets= "tickets",
+  Users= "users",
 }

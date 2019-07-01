@@ -41,8 +41,10 @@
     "typescript": "^3.1.6"
   },
   "jest": {
-      "verbose": true,
-      "moduleDirectories": ["node_modules", "src"]
+    "verbose": true,
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
   }
-  
 }

@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 import chalk from "chalk";
-import figlet from 'figlet';
 import program from "commander";
-import search from './search';
-import { dataStore, SearchType, DataStore} from "./data-types";
-import { splitArguments } from "./utils";
+import figlet from "figlet";
 import { isUndefined } from "util";
+import { dataStore, DataStore, SearchType} from "./data-types";
+import search from "./search";
+import { splitArguments } from "./utils";
 
+// tslint:disable-next-line: no-console
 console.log(
   chalk.red(
-    figlet.textSync("search-cli", { horizontalLayout: "full" })
-  )
+    figlet.textSync("search-cli", { horizontalLayout: "full" }),
+  ),
 );
 
 program
@@ -23,27 +24,27 @@ program
 
 function isValidInputArguments<T extends keyof DataStore>(searchType: T, field: string, value: string) {
   if (isUndefined(field) || isUndefined(value)) {
-    throw Error('field or value is not given properly');
+    throw Error("field or value is not given properly");
   }
   if (!dataStore[searchType][0].hasOwnProperty(field)) {
-    throw Error('input field is not found.');
+    throw Error("input field is not found.");
   }
 }
 
 if (program.user) {
-  const { field, value } = splitArguments(program.user)
+  const { field, value } = splitArguments(program.user);
   isValidInputArguments(SearchType.Users, field, value);
   search(SearchType.Users, field, value);
 }
 
 if (program.tickets) {
-  const { field, value } = splitArguments(program.tickets)
+  const { field, value } = splitArguments(program.tickets);
   isValidInputArguments(SearchType.Tickets, field, value);
   search(SearchType.Tickets, field, value);
 }
 
 if (program.organizations) {
-  const { field, value } = splitArguments(program.organizations)
+  const { field, value } = splitArguments(program.organizations);
   isValidInputArguments(SearchType.Organizations, field, value);
   search(SearchType.Organizations, field, value);
 }
