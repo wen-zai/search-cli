@@ -15,13 +15,13 @@ export default function search(searchType: SearchType, searchField: string, sear
         //  case-insentive string match 
         if (typeof fieldValue === "string" && isStringEqualCaseInsensitive(fieldValue, searchContent)) {
             results.push(dataElement);
-            //  case-insentive array element match 
+        //  case-insentive array element match 
         } else if (isArray(fieldValue) && isArrayIncludeElementCaseInsensitive(fieldValue, searchContent)) {
             results.push(dataElement);
-            //  number match 
+         //  number match 
         } else if (typeof fieldValue === "number" && fieldValue === Number(searchContent)) {
             results.push(dataElement);
-            //  boolean match     
+         //  boolean match     
         } else if (typeof fieldValue === "boolean" && fieldValue === Boolean(searchContent)) {
             results.push(dataElement);
         }
