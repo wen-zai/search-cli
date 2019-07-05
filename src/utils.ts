@@ -11,15 +11,6 @@ export const isArrayIncludeElementCaseInsensitive = (targetArray: string[], str:
   return upperCaseTargetArray.includes(str.toUpperCase());
 };
 
-export type Partial<T> = {
-  [P in keyof T]?: T[P];
-};
-
-
-export type Pick<T, K extends keyof T> = {
-  [P in K]: T[P];
-};
-
 export const splitArguments = (targetStr: string) => {
   const splitedArray = targetStr.split(',');
   return { field: splitedArray[0], value: splitedArray[1] };
