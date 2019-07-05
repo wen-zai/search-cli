@@ -98,3 +98,4 @@ export enum SearchType {
   Tickets = "tickets",
   Users = "users",
 }
+
