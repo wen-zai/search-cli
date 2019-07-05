@@ -15,10 +15,13 @@ export default function search(searchType: SearchType, searchField: string, sear
         //  case-insentive string match 
         if (typeof fieldValue === "string" && isStringEqualCaseInsensitive(fieldValue, searchContent)) {
             results.push(dataElement);
+            //  case-insentive array element match 
         } else if (isArray(fieldValue) && isArrayIncludeElementCaseInsensitive(fieldValue, searchContent)) {
             results.push(dataElement);
+            //  number match 
         } else if (typeof fieldValue === "number" && fieldValue === Number(searchContent)) {
             results.push(dataElement);
+            //  boolean match     
         } else if (typeof fieldValue === "boolean" && fieldValue === Boolean(searchContent)) {
             results.push(dataElement);
         }
@@ -37,8 +40,8 @@ export default function search(searchType: SearchType, searchField: string, sear
 
 // Get relavant Users and Tickets entities from the map created based on organization_id 
 // Get relavant organization entities from the map created based on its id 
-export function searchRelavantEntities(searchType: SearchType, result: Organization | User | Ticket): 
-Partial<DataStore> {
+export function searchRelavantEntities(searchType: SearchType, result: Organization | User | Ticket):
+    Partial<DataStore> {
     let organizationId;
     let organization;
     let tickets;
